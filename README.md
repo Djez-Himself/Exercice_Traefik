@@ -6,8 +6,6 @@ Mise en place d'un conteneur Reverse-proxy "Traefik" et 2 conteneurs Whoami
 
 ```bash
 mkdir traefik
-
-```bash
 cd traefik
 
 
