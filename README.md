@@ -32,7 +32,7 @@ git pull https://github.com/Djez-Himself/exercice_Traefik.git
 
 ```bash
 docker compose up -d 
-#tips : la command -d permet de lancer les conteneurs en mode détachés.
+#tips : l'option "-d" permet de lancer les conteneurs en mode détachés.
 ```
 ### Afficher les conteneurs
 ```bash
