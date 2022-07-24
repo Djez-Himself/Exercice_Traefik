@@ -2,7 +2,7 @@
 Mise en place d'un conteneur Reverse-proxy "Traefik" et 2 conteneurs Whoami
 #Guide d'installation
 
-Provider Docker : ![docker.png](https://doc.traefik.io/traefik/assets/img/providers/docker.png)
+![docker.png](https://doc.traefik.io/traefik/assets/img/providers/docker.png)
 
 
 
@@ -11,6 +11,7 @@ Provider Docker : ![docker.png](https://doc.traefik.io/traefik/assets/img/provid
 - Docker desktop
 - Distribution linux (WSL2)
 - Visual studio code (confort)
+- Documentation officielle Traefik : https://doc.traefik.io/traefik/
  
 Possibilité de rester dans la console de votre Wsl ou d'utiliser visual studio code en saississant la command ```code .``` 
 
@@ -52,4 +53,6 @@ http://first.localhost
 http://second.localhost
 ```
 
-
+### Ajouts possible
+- config https avec certificats TLS (ajout port 443)
+- possibilité d'ajouter un fichier de config .yml ou .toml au lieu de saisir directement les commandes dans le docker compose.
