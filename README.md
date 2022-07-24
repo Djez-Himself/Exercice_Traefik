@@ -2,17 +2,17 @@
 Mise en place d'un conteneur Reverse-proxy "Traefik" et 2 conteneurs Whoami
 #Guide d'installation
 
-#Pré-requis
+##Pré-requis
 - Docker
 - Distribution linux
 
-#Création d'un dossier (os: Debian WSL2)
+##Création d'un dossier (os: Debian WSL2)
 
 ```bash
 mkdir traefik
 cd traefik
 
-#Récuperation du fichier de config des conteneurs
+##Récuperation du fichier de config des conteneurs
 
 
 
