@@ -2,7 +2,11 @@
 Mise en place d'un conteneur Reverse-proxy "Traefik" et 2 conteneurs Whoami
 #Guide d'installation
 
-Provider Docker : ![docker.png](![docker.png](https://doc.traefik.io/traefik/assets/img/providers/docker.png))
+Provider Docker : [![shark.png](https://doc.traefik.io/traefik/assets/img/providers/docker.png)](https://doc.traefik.io/traefik/routing/providers/docker/)
+
+
+
+
 
 
 ## Pré-requis windows
