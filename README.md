@@ -16,8 +16,20 @@ cd traefik
 ##Récuperation du fichier de config des conteneurs
 
 ```bash
-git pull 
+git pull https://github.com/Djez-Himself/exercice_Traefik.git
 ```
 
+##Création des conteneurs
+
+```bash
+docker compose up -d 
+#tips : la command -d permet de lancer les conteneur en mode détaché.
+```
+
+##Accés au portail Traefik et url serveur whoami.
+
+```url
+http://localhost:8181
+```
 
 
