@@ -6,7 +6,7 @@ services:
     image: "traefik:v2.8.1" #"traefik:latest"
     container_name: "traefik"
     restart: unless-stopped #cela permet que le conteneur ne se lance pas à l'éxécution de docker desktop si le service est arrêté.
-    command:
+    command: #alternative est la création d'un fichier de config
       #- "--log.level=DEBUG"
       - "--api.insecure=true" #accés au dashboard
       - "--providers.docker=true" #déclaration de docker pour le backend
@@ -17,6 +17,7 @@ services:
       - "8181:8080" #modification de la redirection deja un containeur sur 8080 en local.
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      #- "./traefik/traefik.yml:/etc/traefik/traefik.yml si besoin d'ajouter un fichier de config
 
   whoami1:
     image: "containous/whoami"
