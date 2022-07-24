@@ -11,8 +11,13 @@ Mise en place d'un conteneur Reverse-proxy "Traefik" et 2 conteneurs Whoami
 ```bash
 mkdir traefik
 cd traefik
+```
 
 ##Récuperation du fichier de config des conteneurs
+
+```bash
+git pull 
+```
 
 
 
