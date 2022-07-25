@@ -45,7 +45,9 @@ docker ps
 ```url
 # dashboad Traefik
 http://localhost:8181
-http://traefik.localhost
+```
+```url
+[http://localhost:8181](http://traefik.localhost)
 ```
 
 ```url
