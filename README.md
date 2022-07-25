@@ -37,7 +37,7 @@ git pull https://github.com/Djez-Himself/exercice_Traefik.git
 - volumes
 
 ### Modification sur traefik.yml
-- network #suivant vos préférences
+- network #garder le même que sur votre docker-compose.yml
 - filename #suivant le chemin utilisé
 
 ### Modification sur config.yml
