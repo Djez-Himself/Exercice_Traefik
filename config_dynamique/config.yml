@@ -9,5 +9,5 @@ http:
     basic-auth:
       basicAuth:
         users:
-          - "ben:$apr1$yN5SkU9i$/.72ViNpEiXNikGnMFNBV0"
+          - "ben:$apr1$yN5SkU9i$/.72ViNpEiXNikGnMFNBV0" #ben 123456
         removeHeader: true
