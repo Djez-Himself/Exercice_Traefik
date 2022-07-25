@@ -4,11 +4,11 @@ services:
   traefik:
     deploy:
       labels:
-        #traefik.http.routers.traefik.rule: Host(`traefik.localhost`)" #référencement DNS
         traefik.docker.network: "traefik-benlab"
         traefik.enable: "true"
-        traefik.http.routers.traefik.entrypoints: "http"
-        #traefik.http.routers.traefik.service: "api@internal"
+        #traefik.http.routers.traefik.rule: Host(`traefik.localhost`)" #remplacer par la config dynamique
+        #traefik.http.routers.traefik.entrypoints: "http" #remplacer par la config dynamique
+        #traefik.http.routers.traefik.service: "api@internal" #remplacer par la config dynamique
 
     image: "traefik:v2.8.1" #"traefik:latest"
     networks:
