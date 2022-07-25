@@ -1,0 +1,13 @@
+http:
+  routers:
+    api:
+      rule: "Host(`traefik.localhost`)"
+      service: api@internal
+      middlewares:
+      - basic-auth
+  middlewares:
+    basic-auth:
+      basicAuth:
+        users:
+          - "ben:$apr1$yN5SkU9i$/.72ViNpEiXNikGnMFNBV0"
+        removeHeader: true
