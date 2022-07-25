@@ -4,11 +4,12 @@ services:
   traefik:
     deploy:
       labels:
-        traefik.http.routers.traefik.rule: "Host(`traefik.localhost`)" #référencement DNS
+        traefik.http.routers.traefik.rule: Host(`traefik.localhost`)" #référencement DNS
         traefik.docker.network: "traefik-benlab"
         traefik.enable: "true"
         traefik.http.routers.traefik.entrypoints: "http"
         traefik.http.routers.traefik.service: "api@internal"
+
     image: "traefik:v2.8.1" #"traefik:latest"
     networks:
       - traefik-benlab
@@ -16,17 +17,18 @@ services:
     restart: unless-stopped #cela permet que le conteneur ne se lance pas à l'éxécution de docker desktop si le service est arrêté.
     command: 
       - "--log.level=DEBUG"
-      - "--api.insecure=true" #accés au dashboard
-      - "--providers.docker=true" #déclaration de docker pour le backend (docker provider)
-      - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80" #point d'entrée http
+      # Les commandes dessous permette de bypass le ficher traefik.yml
+      #- "--api.insecure=true" #accés au dashboard
+      #- "--providers.docker=true" #déclaration de docker pour le backend (docker provider)
+      #- "--providers.docker.exposedbydefault=false"
+      #- "--entrypoints.web.address=:80" #point d'entrée http
     ports:
       - "80:80"
-      - "8181:8080" #modification de la redirection deja un containeur sur 8080 en local.
+      - "8181:8080" 
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "./config.yml:/etc/traefik/config.yml:ro" #config dynamique
-      #- "./traefik.yml:/etc/traefik/traefik.yml" #config static
+      - "./config_dynamique/:/etc/traefik/config_dynamique/:ro" #dossier des configs dynamiques
+      - "./traefik.yml:/etc/traefik/traefik.yml:ro" #config static ne sera pas uti
   
 
   whoami1:
