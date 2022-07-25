@@ -56,4 +56,4 @@ http://second.localhost
 
 ### Ajouts possible
 - config https avec certificats TLS (ajout port 443)
-- possibilité d'ajouter un fichier de config .yml ou .toml au lieu de saisir directement les commandes dans le docker compose.
+- possibilité de modifier le fichier config.yml pour l'ajout de différents services ou middleware.
