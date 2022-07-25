@@ -17,11 +17,13 @@ services:
     restart: unless-stopped #cela permet que le conteneur ne se lance pas à l'éxécution de docker desktop si le service est arrêté.
     command: 
       - "--log.level=DEBUG"
+
       # Les commandes dessous permette de bypass le ficher traefik.yml
       #- "--api.insecure=true" #accés au dashboard
       #- "--providers.docker=true" #déclaration de docker pour le backend (docker provider)
       #- "--providers.docker.exposedbydefault=false"
       #- "--entrypoints.web.address=:80" #point d'entrée http
+      
     ports:
       - "80:80"
       - "8181:8080" 
