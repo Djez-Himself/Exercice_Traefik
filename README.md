@@ -41,7 +41,7 @@ git pull https://github.com/Djez-Himself/exercice_Traefik.git
 - filename #suivant le chemin utilisé
 
 ### Modification sur config.yml
-- rule: "Host(`traefik.localhost`)"
+- rule: ```"Host(`traefik.localhost`)"```
 - users: - ```"ben:$apr1$yN5SkU9i$/.72ViNpEiXNikGnMFNBV0"``` #dans cet exemple ```htpasswd -nb <ben> <123456>```
 
 ```bash
