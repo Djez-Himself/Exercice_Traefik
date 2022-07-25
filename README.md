@@ -42,7 +42,7 @@ git pull https://github.com/Djez-Himself/exercice_Traefik.git
 
 ### Modification sur config.yml
 - rule: "Host(`traefik.localhost`)"
-- users: - ```"ben:$apr1$yN5SkU9i$/.72ViNpEiXNikGnMFNBV0" #dans cet exemple htpasswd -nb <ben> <123456>```
+- users: - ```"ben:$apr1$yN5SkU9i$/.72ViNpEiXNikGnMFNBV0"``` #dans cet exemple htpasswd -nb <ben> <123456>
 
 ```bash
 sudo apt-get install apache2-utils
