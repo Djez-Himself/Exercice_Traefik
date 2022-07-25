@@ -1,0 +1,55 @@
+version: "3.8"
+
+services:
+  traefik:
+    deploy:
+      labels:
+        traefik.http.routers.traefik.rule: "Host(`traefik.localhost`)" #référencement DNS
+        traefik.docker.network: "traefik-benlab"
+        traefik.enable: "true"
+        traefik.http.routers.traefik.entrypoints: "http"
+        traefik.http.routers.traefik.service: "api@internal"
+    image: "traefik:v2.8.1" #"traefik:latest"
+    networks:
+      - traefik-benlab
+    container_name: "traefik"
+    restart: unless-stopped #cela permet que le conteneur ne se lance pas à l'éxécution de docker desktop si le service est arrêté.
+    command: #alternative est la création d'un fichier de config
+      #- "--log.level=DEBUG"
+      - "--api.insecure=true" #accés au dashboard
+      - "--providers.docker=true" #déclaration de docker pour le backend (docker provider)
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80" #point d'entrée http
+    ports:
+      - "80:80"
+      - "8181:8080" #modification de la redirection deja un containeur sur 8080 en local.
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./config.yml:/etc/traefik/config.yml:ro" #config dynamique
+      #- "./traefik.yml:/etc/traefik/traefik.yml" #config static
+  
+
+  whoami1:
+    image: "containous/whoami"
+    networks: 
+      - traefik-benlab
+    container_name: "whoami1"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami1.rule=Host(`first.localhost`)"  #déclaration du nom pour le reférencement DNS
+      - "traefik.http.routers.whoami1.entrypoints=web" #Point d'entrée pour la rédirection
+
+  whoami2:
+    image: "containous/whoami"
+    networks: 
+      - traefik-benlab
+    container_name: "whoami2"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami2.rule=Host(`second.localhost`)" 
+      - "traefik.http.routers.whoami2.entrypoints=web"
+
+networks:
+  traefik-benlab:
+
+
