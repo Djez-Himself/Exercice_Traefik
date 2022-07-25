@@ -4,7 +4,7 @@ services:
   traefik:
     deploy:
       labels:
-        traefik.http.routers.traefik.rule: Host(`traefik.localhost`)" #référencement DNS
+        #traefik.http.routers.traefik.rule: Host(`traefik.localhost`)" #référencement DNS
         traefik.docker.network: "traefik-benlab"
         traefik.enable: "true"
         traefik.http.routers.traefik.entrypoints: "http"
