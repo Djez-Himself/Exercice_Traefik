@@ -41,15 +41,19 @@ docker ps
 ```
 
 ### Accés au portail Traefik et url serveur whoami.
+### dashboad Traefik
 
 ```url
 http://localhost:8181
 ```
 
 ```url
+http://traefik.localhost
+```
+### Serveur Whoami
+```url
 http://first.localhost
 ```
-
 ```url
 http://second.localhost
 ```
