@@ -14,8 +14,8 @@ services:
       - traefik-benlab
     container_name: "traefik"
     restart: unless-stopped #cela permet que le conteneur ne se lance pas à l'éxécution de docker desktop si le service est arrêté.
-    command: #alternative est la création d'un fichier de config
-      #- "--log.level=DEBUG"
+    command: 
+      - "--log.level=DEBUG"
       - "--api.insecure=true" #accés au dashboard
       - "--providers.docker=true" #déclaration de docker pour le backend (docker provider)
       - "--providers.docker.exposedbydefault=false"
