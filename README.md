@@ -28,6 +28,8 @@ cd traefik
 ```bash
 git pull https://github.com/Djez-Himself/exercice_Traefik.git
 ```
+### Edition des fichiers de traefik.yml et config.yml
+
 
 ### Création des conteneurs
 
